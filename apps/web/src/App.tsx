@@ -31,7 +31,7 @@ export default function App() {
   const [viewMode, setViewMode] = useState<'card' | 'table'>('card');
 
   // 비교 분석 대상 목록 (최대 5개)
-  const [compareIds, setCompareIds] = useState<string[]>(['C024', 'C019', 'C020']);
+  const [compareIds, setCompareIds] = useState<string[]>(['C018', 'C027', 'C020']);
   const [comparedCases, setComparedCases] = useState<Case[]>([]);
 
   // 칸반 과제 상태
@@ -325,7 +325,7 @@ export default function App() {
   const handleGenerateReport = async () => {
     setReportLoading(true);
     try {
-      const targetIds = compareIds.length > 0 ? compareIds : ['C024', 'C019'];
+      const targetIds = compareIds.length > 0 ? compareIds : ['C018', 'C027'];
       const report = await api.generateReport(targetIds, 'BRIEFING');
       setGeneratedReport(report);
     } catch (err) {
