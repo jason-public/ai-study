@@ -1,6 +1,6 @@
 """
-시장 보고서 자동 생성 API (api/v1/reports.py)
-시장 보고용 1페이지 브리핑, 심층 분석서, 실무 추진계획서 자동 생성
+시장님 보고서 자동 생성 API (api/v1/reports.py)
+시장님 보고용 1페이지 브리핑, 심층 분석서, 실무 추진계획서 자동 생성
 """
 
 from typing import List, Optional
@@ -16,14 +16,14 @@ router = APIRouter(prefix="/reports", tags=["보고서 자동 생성"])
 class ReportRequest(BaseModel):
     case_ids: List[str]
     report_type: str = "BRIEFING"  # BRIEFING (1페이지 브리핑) | IN_DEPTH (심층분석서) | ROADMAP (실무계획서)
-    target_audience: str = "남양주시장 보고용"
+    target_audience: str = "남양주시장님 보고용"
     author_dept: str = "남양주시 스마트 행정혁신 연구동아리"
 
 
 @router.post("/generate")
 def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
     """
-    선택한 정책 사례를 기반으로 시장 보고용 문서 자동 생성
+    선택한 정책 사례를 기반으로 시장님 보고용 문서 자동 생성
     """
     if not req.case_ids:
         raise HTTPException(status_code=400, detail="최소 1개 이상의 사례를 선택해야 합니다.")
@@ -43,11 +43,11 @@ def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
     if case_count == 1:
         c = cases[0]
         a = assess_map.get(c.id)
-        title = f"[시장 보고] 전국 우수사례 기반 남양주시 '{c.title}' 정책 도입 제안서"
+        title = f"[시장님 보고] 전국 우수사례 기반 남양주시 '{c.title}' 정책 도입 제안서"
         summary_text = (
             f"전국 지자체 AI 행정혁신 우수사례({c.region} {c.city})를 정밀 분석한 결과, "
             f"남양주시 행정 현안에 적용 시 시민 체감 효과와 공무원 업무 절감 효율이 매우 높을 것으로 판단되어 "
-            f"2026년 하반기 시범사업 도입 및 시장 정책 결정을 건의드립니다."
+            f"2026년 하반기 시범사업 도입 및 시장님 정책 결정을 건의드립니다."
         )
         benchmark_content = (
             f"- **대상 기관**: {c.region} {c.city}\n"
@@ -66,7 +66,7 @@ def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
         )
     else:
         case_titles = ", ".join([f"'{c.title}'" for c in cases[:3]]) + (f" 외 {case_count - 3}건" if case_count > 3 else "")
-        title = f"[시장 보고] 전국 {case_count}대 AI 행정혁신 우수사례 종합 정책 도입 제안서"
+        title = f"[시장님 보고] 전국 {case_count}대 AI 행정혁신 우수사례 종합 정책 도입 제안서"
         summary_text = (
             f"전국 17개 시도에서 검증된 대표 AI 행정혁신 우수사례 {case_count}건({case_titles})을 비교 분석하여, "
             f"남양주시의 복지 사각지대 해소, 교통 민원 사전 예방, 야간 당직 자동화 등 핵심 시정 현안을 동시 해결하기 위한 "
@@ -123,7 +123,7 @@ def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
             )
         },
         {
-            "heading": "5. 시장 의사결정 및 정책 승인 요청사항 (Decision Points)",
+            "heading": "5. 시장님 의사결정 및 정책 승인 요청사항 (Decision Points)",
             "content": (
                 "- **방침 결정**: 선택된 AI 행정혁신 우수사례 시범도입 방침 확정 및 부서별 실행 과제 지정 승인\n"
                 "- **조직 협업**: 스마트도시과 총괄 주관 하에 사업별 소관 부서 전담 인력 지정\n"

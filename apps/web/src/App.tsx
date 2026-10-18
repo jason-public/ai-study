@@ -422,7 +422,7 @@ export default function App() {
               { id: 'compare', label: '남양주 적합성 & 비교', icon: Scale },
               { id: 'chat', label: 'Grok RAG 챗봇', icon: Bot },
               { id: 'kanban', label: '정책 실행 과제', icon: Kanban },
-              { id: 'reports', label: '시장 보고서', icon: FileText },
+              { id: 'reports', label: '시장님 보고서', icon: FileText },
             ].map(tab => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -472,7 +472,7 @@ export default function App() {
                     <ChevronRight style={{ width: 16, height: 16 }} />
                   </button>
                   <button onClick={() => setActiveTab('reports')} className="btn-secondary">
-                    <span>시장 보고용 브리핑 확인</span>
+                    <span>시장님 보고용 브리핑 확인</span>
                   </button>
                 </div>
               </div>
@@ -1395,7 +1395,7 @@ export default function App() {
         )}
 
         {/* ============================================================== */}
-        {/* TAB 7. 시장 보고서 자동 생성 스튜디오 */}
+        {/* TAB 7. 시장님 보고서 자동 생성 스튜디오 */}
         {/* ============================================================== */}
         {activeTab === 'reports' && (
           <div style={{ maxWidth: 880, margin: '0 auto' }}>
@@ -1405,10 +1405,10 @@ export default function App() {
                   MAYORAL POLICY BRIEFING STUDIO
                 </p>
                 <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 28, fontWeight: 600 }}>
-                  남양주시장 정책 브리핑 1페이지 자동 생성
+                  남양주시장님 정책 브리핑 1페이지 자동 생성
                 </h1>
                 <p style={{ fontSize: 13, color: 'var(--text-taupe)', marginTop: 4 }}>
-                  검증된 타 지자체 성과와 남양주 행정수요 적합성을 기반으로 시장 보고용 공문서를 즉시 생성합니다.
+                  검증된 타 지자체 성과와 남양주 행정수요 적합성을 기반으로 시장님 보고용 공문서를 즉시 생성합니다.
                 </p>
               </div>
 
@@ -1482,7 +1482,7 @@ export default function App() {
                   생성된 보고서가 없습니다
                 </h3>
                 <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 20 }}>
-                  상단의 '보고서 자동 생성' 버튼을 클릭하면 1페이지 시장 브리핑 문서가 완성됩니다.
+                  상단의 '보고서 자동 생성' 버튼을 클릭하면 1페이지 시장님 브리핑 문서가 완성됩니다.
                 </p>
                 <button onClick={handleGenerateReport} className="btn-primary">
                   1페이지 브리핑 생성 시작
