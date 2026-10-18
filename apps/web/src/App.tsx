@@ -600,27 +600,6 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="panel-card" style={{ backgroundColor: 'var(--bg-tint-amber)', borderColor: '#E5DCB8' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                    <ShieldCheck style={{ width: 18, height: 18, color: 'var(--primary-amber)' }} />
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--primary-amber-active)' }}>
-                      남양주시 스마트 행정혁신 제언
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: 13, color: 'var(--text-taupe)', lineHeight: 1.75 }}>
-                    전국 지자체 사례 중 <strong>복지·돌봄(C024 남양주 안부살핌, C001 서울)</strong>과 
-                    <strong>교통 부정주차(C019 강남구)</strong>, 
-                    <strong>내부 행정자동화(C020 광주 AI당직)</strong>의 
-                    시민 체감 및 업무절감 점수가 가장 높게 나타났습니다.
-                  </p>
-                  <button
-                    onClick={() => setActiveTab('compare')}
-                    style={{ marginTop: 14, fontSize: 12, fontWeight: 700, color: 'var(--primary-amber-hover)', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: 4 }}
-                  >
-                    <span>남양주 적합성 심층 평가표 확인하기</span>
-                    <span>→</span>
-                  </button>
-                </div>
               </div>
             </div>
 
