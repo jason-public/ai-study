@@ -1405,7 +1405,7 @@ export default function App() {
                   MAYORAL POLICY BRIEFING STUDIO
                 </p>
                 <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 28, fontWeight: 600 }}>
-                  남양주시장님 정책 브리핑 1페이지 자동 생성
+                  정책 브리핑 1페이지 자동 생성
                 </h1>
                 <p style={{ fontSize: 13, color: 'var(--text-taupe)', marginTop: 4 }}>
                   검증된 타 지자체 성과와 남양주 행정수요 적합성을 기반으로 시장님 보고용 공문서를 즉시 생성합니다.
@@ -1427,11 +1427,8 @@ export default function App() {
               <div className="panel-card" style={{ padding: 48, backgroundColor: '#FFFFFF', boxShadow: 'var(--shadow-card)' }}>
                 <div style={{ borderBottom: '2px solid var(--text-ink)', paddingBottom: 16, marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div>
-                    <span style={{ fontSize: 11, fontFamily: 'monospace', fontWeight: 700, color: 'var(--primary-amber)', letterSpacing: '0.12em' }}>
-                      {generatedReport.audience} · 정책 건의
-                    </span>
                     <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 22, fontWeight: 700, color: 'var(--text-ink)', marginTop: 4 }}>
-                      {generatedReport.title}
+                      {generatedReport.title.replace(/^\[시장(?:님)? 보고\]\s*/, '')}
                     </h2>
                   </div>
                   <div style={{ textAlign: 'right', fontSize: 11, color: 'var(--text-muted)', fontFamily: 'monospace' }}>

@@ -43,7 +43,7 @@ def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
     if case_count == 1:
         c = cases[0]
         a = assess_map.get(c.id)
-        title = f"[시장님 보고] 전국 우수사례 기반 남양주시 '{c.title}' 정책 도입 제안서"
+        title = f"전국 우수사례 기반 남양주시 '{c.title}' 정책 도입 제안서"
         summary_text = (
             f"전국 지자체 AI 행정혁신 우수사례({c.region} {c.city})를 정밀 분석한 결과, "
             f"남양주시 행정 현안에 적용 시 시민 체감 효과와 공무원 업무 절감 효율이 매우 높을 것으로 판단되어 "
@@ -66,7 +66,7 @@ def generate_report(req: ReportRequest, db: Session = Depends(get_db)):
         )
     else:
         case_titles = ", ".join([f"'{c.title}'" for c in cases[:3]]) + (f" 외 {case_count - 3}건" if case_count > 3 else "")
-        title = f"[시장님 보고] 전국 {case_count}대 AI 행정혁신 우수사례 종합 정책 도입 제안서"
+        title = f"전국 {case_count}대 AI 행정혁신 우수사례 종합 정책 도입 제안서"
         summary_text = (
             f"전국 17개 시도에서 검증된 대표 AI 행정혁신 우수사례 {case_count}건({case_titles})을 비교 분석하여, "
             f"남양주시의 복지 사각지대 해소, 교통 민원 사전 예방, 야간 당직 자동화 등 핵심 시정 현안을 동시 해결하기 위한 "
